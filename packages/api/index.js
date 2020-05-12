@@ -1,22 +1,17 @@
+require('module-alias/register');
 const  { GraphQLServer } = require('graphql-yoga');
-
-const typeDefs = `
-type Query {
-  info: String!
-}
-`
 
 const resolvers = {
   Query: {
-    info: () => 'This is a news clone'
+    healthcheck: () => {
+      return '200 OK';
+    }
   }
 }
 
 const server = new GraphQLServer({
-  typeDefs,
+  typeDefs: './src/schema.graphql',
   resolvers
 });
 
 server.start(() => console.log('Server is running on http://localhost:4000'))
-
-
