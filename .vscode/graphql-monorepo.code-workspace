@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"name": "root",
+			"path": "..",
+		},
+		{
+			"name": "common",
+			"path": "../packages/common/"
+		},
+		{
+			"name": "api",
+			"path": "../packages/api/"
+		},
+		{
+			"name": "client",
+			"path": "../packages/client/"
+		},
+		
+	],
+	"settings": {
+		"jest.pathToJest": "yarn run test", // the "jest" command exists in each package
+		"jest.disabledWorkspaceFolders": [
+			"root",
+			"common"
+		],
+		"files.exclude": {
+			"**/dist/*": true,
+			"**/node_modules/*": true
+		},
+		"editor.useTabStops": false // contains everything, would duplicate test runs
+	}
+}
